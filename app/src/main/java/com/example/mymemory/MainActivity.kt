@@ -19,6 +19,5 @@ class MainActivity : AppCompatActivity() {
         rvBoard = findViewById(R.id.rvBoard)
         tvNumberMoves = findViewById(R.id.tvNumberMoves)
         tvNumberPairs = findViewById(R.id.tvNumberPairs)
-
     }
 }
