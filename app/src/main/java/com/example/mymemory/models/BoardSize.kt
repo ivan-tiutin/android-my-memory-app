@@ -3,7 +3,7 @@ package com.example.mymemory.models
 enum class BoardSize (val numCards: Int) {
     EASY(8),
     MEDIUM(18),
-    HARD(28);
+    HARD(24);
 
     fun getWidth(): Int {
         return when (this) {

@@ -12,7 +12,7 @@ import com.example.mymemory.models.BoardSize
 import kotlin.math.min
 
 
-class MemoryBoardAdapter(private val context: Context, private val boardSize: BoardSize) : RecyclerView.Adapter<MemoryBoardAdapter.ViewHolder>() {
+class MemoryBoardAdapter(private val context: Context, private val boardSize: BoardSize, private val cardImages: List<Int>) : RecyclerView.Adapter<MemoryBoardAdapter.ViewHolder>() {
 
     companion object {
         private const val MARGIN_SIZE = 10
@@ -43,6 +43,7 @@ class MemoryBoardAdapter(private val context: Context, private val boardSize: Bo
         private val imageButton = itemView.findViewById<ImageButton>(R.id.imageButton)
 
         fun bind(position: Int) {
+            imageButton.setImageResource(cardImages[position])
             imageButton.setOnClickListener {
                 Log.i(TAG, "Click on position $position")
             }
