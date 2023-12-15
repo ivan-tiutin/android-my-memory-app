@@ -5,7 +5,9 @@ import com.example.mymemory.utils.DEFAULT_ICONS
 class MemoryGame(private val boardSize: BoardSize) {
 
     var cards: List<MemoryCard>
-    private var numPairsFound: Int = 0
+    var numPairsFound: Int = 0
+
+    private var numCardFlips: Int = 0
     private var indexOfSingleSelectedCard: Int? = null
 
     init {
@@ -17,6 +19,7 @@ class MemoryGame(private val boardSize: BoardSize) {
     fun flipCard(position: Int): Boolean {
         val card = cards[position]
         var foundMatch = false
+        numCardFlips++
 
         if (card.isMatched) {
             return false
@@ -63,5 +66,9 @@ class MemoryGame(private val boardSize: BoardSize) {
 
     fun isCardFaceUp(position: Int): Boolean {
         return cards[position].isFaceUp
+    }
+
+    fun getNumMoves(): Int {
+        return numCardFlips / 2
     }
 }
